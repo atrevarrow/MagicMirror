@@ -1,7 +1,4 @@
-/* Magic Mirror Config Sample
- *
- * By Michael Teeuw http://michaelteeuw.nl
- * MIT Licensed.
+/* Magic Mirror Config
  */
 
 var config = {
@@ -17,17 +14,38 @@ var config = {
 		},
 		{
 			module: 'clock',
-			position: 'top_left'
+			position: 'top_left',
+			config: {
+				displayType: 'digital'
+			}
+
 		},
 		{
 			module: 'calendar',
-			header: 'US Holidays',
+			header: 'Liz\'s Calendar',
 			position: 'top_left',
 			config: {
 				calendars: [
 					{
-						symbol: 'calendar-check-o ',
-						url: 'webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics'
+						symbol: 'calendar',
+						url: 'HIDDEN'
+					}
+				]
+			}
+		},
+		{
+			module: 'calendar',
+			header: 'Birthdays/holidays',
+			position: 'top_left',
+			config: {
+				calendars: [
+					{
+						symbol: 'birthday-cake',
+						url: 'HIDDEN'
+					},
+					{
+						symbol: 'suitcase',
+						url: 'HIDDEN'
 					}
 				]
 			}
@@ -40,9 +58,9 @@ var config = {
 			module: 'currentweather',
 			position: 'top_right',
 			config: {
-				location: 'New York',
-				locationID: '',  //ID from http://www.openweathermap.org
-				appid: 'YOUR_OPENWEATHER_API_KEY'
+				location: 'Tauranga, NZ',
+				locationID: '2208032',  //ID from http://www.openweathermap.org
+				appid: 'HIDDEN'
 			}
 		},
 		{
@@ -50,9 +68,9 @@ var config = {
 			position: 'top_right',
 			header: 'Weather Forecast',
 			config: {
-	            location: 'New York',
-				locationID: '5128581',  //ID from http://www.openweathermap.org
-	            appid: 'YOUR_OPENWEATHER_API_KEY'
+	            location: 'Tauranga, NZ',
+				locationID: '2208032',  //ID from http://www.openweathermap.org
+	            appid: 'HIDDEN'
 			}
 		},
 		{
@@ -61,10 +79,30 @@ var config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "BBC UK News",
+						url: "http://feeds.bbci.co.uk/news/uk/rss.xml"
 					}
 				],
+				showDescription: false,
+				showSourceTitle: true,
+				showPublishDate: true
+			}
+		},
+		{
+			module: 'newsfeed',
+			position: 'bottom_bar',
+			config: {
+				feeds: [
+					//{
+					//	title: "BBC Sport - F1",
+					//	url: "http://feeds.bbci.co.uk/sport/0/formula1/rss.xml"
+					//}
+					{
+						title: "NZ Herald top stories",
+						url: "http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"
+					}
+				],
+				showDescription: false,
 				showSourceTitle: true,
 				showPublishDate: true
 			}
