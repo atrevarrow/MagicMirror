@@ -56,6 +56,7 @@ var config = {
 		},
 		{
 			module: 'currentweather',
+			header: 'Tauranga',
 			position: 'top_right',
 			config: {
 				location: 'Tauranga, NZ',
@@ -66,11 +67,18 @@ var config = {
 		{
 			module: 'weatherforecast',
 			position: 'top_right',
-			header: 'Weather Forecast',
 			config: {
 	            location: 'Tauranga, NZ',
 				locationID: '2208032',  //ID from http://www.openweathermap.org
 	            appid: 'HIDDEN'
+			}
+		},
+		{
+			module: 'MMM-MetServiceRadar',
+			header: 'Rain radar',
+			position: 'top_right',
+			config: {
+				location: 'BOP'
 			}
 		},
 		{
